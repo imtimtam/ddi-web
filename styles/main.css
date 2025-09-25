@@ -81,3 +81,28 @@
     border-radius: 10px;
     font-size: 10px;
 }
+
+.library__results{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 20px;
+}
+.library__results-headline{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+.library__results-subheader{
+    text-align: center;
+    color: var(--subtext-color);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.library__results-description{
+    text-align: left;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: bold;
+}
