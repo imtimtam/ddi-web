@@ -53,13 +53,13 @@
                 <form class="library__search">
                     <div class="library__search-box">
                         <div class="library__search-div">
-                            <input class="library__search-bar" type="text" id="drug1" placeholder="Enter a drug">
+                            <input class="library__search-bar" type="text" id="drug1Input" placeholder="Enter a drug">
                             <img class="library__search-icon" src="./images/icons/search_icon.png">
                         </div>
                     </div>
                     <div class="library__search-box">
                         <div class="library__search-div">
-                            <input class="library__search-bar" type="text" id="drug2" placeholder="Enter a drug">
+                            <input class="library__search-bar" type="text" id="drug2Input" placeholder="Enter a drug">
                             <img class="library__search-icon" src="./images/icons/search_icon.png">
                         </div>
                     </div>
@@ -69,10 +69,14 @@
                     <div class="library__results-headline">Caution: Interaction(s) Found</div>
                     <div class="library__results-subheader">X interactions found between drug1 and drug2.</div>
                     <dl class="library__results-description">
-                        <dt class="library__results-description-drug1">Drug 1: </dt><dd>a</dd>
-                        <dt class="library__results-description-drug2">Drug 2: </dt><dd>a</dd>
-                        <dt class="library__results-description-target">Drug Target: </dt><dd>a</dd>
-                        <dt class="library__results-description-conditions">Conditions: </dt><dd>a</dd>
+                        <dt class="library__results-description-term">Drug 1: </dt>
+                        <dd class="library__results-description-value" id="drug1Display">a</dd>
+                        <dt class="library__results-description-term">Drug 2: </dt>
+                        <dd class="library__results-description-value" id="drug2Display">a</dd>
+                        <dt class="library__results-description-term">Drug Target: </dt>
+                        <dd class="library__results-description-value" id="target">a</dd>
+                        <dt class="library__results-description-term">Conditions: </dt>
+                        <dd class="library__results-description-value" id="conditions">a</dd>
                     </dl>
                 </div>
                 <p class="library__main-disclaimer">
