@@ -18,17 +18,17 @@ const libraryForm = document.querySelector(".library__search");
 const results = document.querySelector(".library__results");
 const headline = document.querySelector(".library__results-headline");
 const subheader = document.querySelector(".library__results-subheader");
-const drug1Value = document.querySelector(".library__results-description-drug1").nextElementSibling;
-const drug2Value = document.querySelector(".library__results-description-drug2").nextElementSibling;
-const target = document.querySelector(".library__results-description-target").nextElementSibling;
-const conditions = document.querySelector(".library__results-description-conditions").nextElementSibling;
+const drug1Value = document.getElementById("drug1Display");
+const drug2Value = document.getElementById("drug2Display");
+const target = document.getElementById("target");
+const conditions = document.getElementById("conditions");
 
 console.log(drug1Value, drug2Value, target, conditions);
 
 libraryForm.addEventListener("submit", async e => {
     e.preventDefault();
-    const drug1 = document.getElementById("drug1").value.trim();
-    const drug2 = document.getElementById("drug2").value.trim();
+    const drug1 = document.getElementById("drug1Input").value.trim();
+    const drug2 = document.getElementById("drug2Input").value.trim();
 
     if(!drug1 || !drug2){
         results.classList.remove("hidden");
@@ -44,8 +44,8 @@ libraryForm.addEventListener("submit", async e => {
             headline.textContent = "Safe: No Interaction(s) Found";
             subheader.textContent = `0 interactions found between ${drug1} and ${drug2}`
 
-            drug1Value.textContent = drug1;
-            drug2Value.textContent = drug2;
+            drug1Display.textContent = drug1;
+            drug2Display.textContent = drug2;
             target.textContent = "None";
             conditions.textContent = "None";
             return;
@@ -55,8 +55,8 @@ libraryForm.addEventListener("submit", async e => {
             headline.textContent = `Caution: ${count} Interactions(s) Found`;
             subheader.textContent = `${count} interactions found between ${drug1} and ${drug2}`
 
-            drug1Value.textContent = drug1;
-            drug2Value.textContent = drug2;
+            drug1Display.textContent = drug1;
+            drug2Display.textContent = drug2;
             target.innerHTML = data.targets ? data.targets.join(", ") : "None";
             conditions.innerHTML = data.conditions_and_prr
                                    ? Object.entries(data.conditions_and_prr)
