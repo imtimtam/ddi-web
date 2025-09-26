@@ -50,29 +50,30 @@
             <h2 class="library__main-title">Drug Interaction Checker</h2>
             <span class="library__main-subtitle">Check for potential interactions between any drugs.</span>
             <div class="library__main-content">
-                <div class="library__search">
-                    <div class="library__search-div">
-                        <input class="library__search-bar" type="text" placeholder="Enter a drug">
-                        <img class="library__search-icon" src="./images/icons/search_icon.png">
+                <form class="library__search">
+                    <div class="library__search-box">
+                        <div class="library__search-div">
+                            <input class="library__search-bar" type="text" id="drug1" placeholder="Enter a drug">
+                            <img class="library__search-icon" src="./images/icons/search_icon.png">
+                        </div>
                     </div>
-                </div>
-                <div class="library__search">
-                    <div class="library__search-div">
-                        <input class="library__search-bar" type="text" placeholder="Enter a drug">
-                        <img class="library__search-icon" src="./images/icons/search_icon.png">
+                    <div class="library__search-box">
+                        <div class="library__search-div">
+                            <input class="library__search-bar" type="text" id="drug2" placeholder="Enter a drug">
+                            <img class="library__search-icon" src="./images/icons/search_icon.png">
+                        </div>
                     </div>
-                </div>
-                <button class="library__search-button">Check</button>
-                <div class="library__results">
+                    <button type="submit" class="library__search-button">Check</button>
+                </form>
+                <div class="library__results hidden">
                     <div class="library__results-headline">Caution: Interaction(s) Found</div>
                     <div class="library__results-subheader">X interactions found between drug1 and drug2.</div>
-                    <div class="library__results-description">
-                        <div class="library__results-description-drug1">Drug 1: a</div>
-                        <div class="library__results-description-drug2">Drug 2: b</div>
-                        <div class="library__results-description-target">Drug Target: c</div>
-                        <div class="library__results-description-prr">PRR: 3.0</div>
-                        <div class="library__results-description-text">description</div>
-                    </div>
+                    <dl class="library__results-description">
+                        <dt class="library__results-description-drug1">Drug 1: </dt><dd>a</dd>
+                        <dt class="library__results-description-drug2">Drug 2: </dt><dd>a</dd>
+                        <dt class="library__results-description-target">Drug Target: </dt><dd>a</dd>
+                        <dt class="library__results-description-conditions">Conditions: </dt><dd>a</dd>
+                    </dl>
                 </div>
                 <p class="library__main-disclaimer">
                     <b>DISCLAIMER</b>: While this is a project that uses real drug data from <b><a href="https://www.guidetopharmacology.org/">IUPHAR Guide to Pharmacology</a></b> and <b><a href="https://nsides.io/">nSIDES' TWOSIDES</a></b> database, this should NOT be used as a sole or legitimate source over any qualified and licensed practitioner or health care provider.
@@ -83,5 +84,6 @@
             <h2 class="library__notes-title">Important Notes</h2>
         </section> -->
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
