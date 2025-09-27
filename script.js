@@ -32,37 +32,36 @@ libraryForm.addEventListener("submit", async e => {
 
     if(!drug1 || !drug2){
         results.classList.remove("hidden");
-        headline.textContent = "Enter both drugs.";
+        headline.textContent = "⚠ ERROR: ENTER BOTH DRUGS";
         return;
     }
 
     try{
         const data = await fetchInteraction(drug1, drug2);
-
         results.classList.remove("hidden");
         if(data.interaction != true){
-            headline.textContent = "Safe: No Interaction(s) Found";
-            subheader.textContent = `0 interactions found between ${drug1} and ${drug2}`
+            headline.textContent = "✔ SAFE: NO INTERACTIONS FOUND";
+            subheader.textContent = `No significant reports found between ${drug1} and ${drug2}.`
 
-            drug1Display.textContent = drug1;
-            drug2Display.textContent = drug2;
-            target.textContent = "None";
-            conditions.textContent = "None";
+            // drug1Display.textContent = drug1;
+            // drug2Display.textContent = drug2;
+            target.textContent = "Not Recorded";
+            conditions.textContent = "No significant reports";
             return;
         }
         else{
             const count = Object.keys(data.conditions_and_prr).length;
-            headline.textContent = `Caution: ${count} Interactions(s) Found`;
-            subheader.textContent = `${count} interactions found between ${drug1} and ${drug2}`
+            headline.textContent = `⚠ CAUTION: INTERACTIONS FOUND`;
+            subheader.textContent = `${count} potential adverse events found between ${drug1} and ${drug2}.`
 
-            drug1Display.textContent = drug1;
-            drug2Display.textContent = drug2;
-            target.innerHTML = data.targets ? data.targets.join(", ") : "None";
+            // drug1Display.textContent = drug1;
+            // drug2Display.textContent = drug2;
+            target.innerHTML = data.targets ? data.targets.join(", ") : "Not Recorded";
             conditions.innerHTML = data.conditions_and_prr
                                    ? Object.entries(data.conditions_and_prr)
-                                    .map(([cond, prr]) => `${cond}: ${prr}`)
+                                    .map(([cond, prr]) => `${cond} : ${prr.toFixed(2)}`)
                                     .join("<br>")
-                                   : "None"; 
+                                   : "No significant reports"; 
         }
     }
     catch(error){
