@@ -1,7 +1,7 @@
 .header{
-    height: 70px;
+    height: 60px;
     background-color: var(--tertiary-color);
-    padding: 0 20px;
+    padding: 0 10px;
 }
 .header__inner{
     display: flex;
@@ -37,7 +37,7 @@
     flex: 1;
     justify-content: center;
     max-width: 500px;
-    margin: 0 30px;
+    margin: 0 20px;
 }
 .header__search-bar{
     flex: 1;
@@ -87,3 +87,26 @@
 .header__sign-in-button:active{
     background-color: var(--primary-color-active);
 }   
+
+/* Tablet and Mobile */
+@media (max-width: 768px){
+    .header{
+        height: 50px;
+    }
+    .header__logo-text{
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .header__sign-in-button{
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    .header__search-bar{
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+    .header__search-button{
+        font-size: 16px;
+        padding: 4px 10px;
+    }
+}
