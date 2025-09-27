@@ -27,3 +27,7 @@ a{
 .hidden{
     display: none !important;
 }
+.underline{
+    border-bottom: 1px solid var(--primary-color);
+    
+}
