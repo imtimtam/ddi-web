@@ -50,21 +50,44 @@
             <h2 class="library__main-title">Symptom Checker</h2>
             <span class="library__main-subtitle">Having symptoms? Check what may be causing what you're feeling.</span>
             <div class="library__main-content">
-                <div class="library__search">
-                    <div class="library__search-div">
-                        <input class="library__search-bar" type="text" placeholder="Enter a drug">
-                        <img class="library__search-icon" src="./images/icons/search_icon.png">
+                <form class="library__search">
+                    <div class="library__search-box">
+                        <div class="library__search-div">
+                            <input class="library__search-bar" type="text" id="drug1Input" placeholder="Enter a drug">
+                            <img class="library__search-icon" src="./images/icons/search_icon.png">
+                        </div>
                     </div>
-                </div>
-                <button class="library__search-button">Check</button>
+                    <div class="library__search-box">
+                        <div class="library__search-div">
+                            <input class="library__search-bar" type="text" id="drug2Input" placeholder="Enter a drug">
+                            <img class="library__search-icon" src="./images/icons/search_icon.png">
+                        </div>
+                    </div>
+                    <button type="submit" class="library__search-button">Check</button>
+                </form>
                 <p class="library__main-disclaimer">
                     <b>DISCLAIMER</b>: While this is a project that uses real drug data from <b><a href="https://www.guidetopharmacology.org/">IUPHAR Guide to Pharmacology</a></b> and <b><a href="https://nsides.io/">nSIDES' TWOSIDES</a></b> database, this should NOT be used as a sole or legitimate source over any qualified and licensed practitioner or health care provider.
                 </p>
+                <div class="library__results hidden">
+                    <div class="library__results-headline">Caution: Interaction(s) Found</div>
+                    <div class="library__results-subheader">X interactions found between drug1 and drug2.</div>
+                    <dl class="library__results-description">
+                        <!-- <dt class="library__results-description-term">Drug 1: </dt>
+                        <dd class="library__results-description-value" id="drug1Display">a</dd>
+                        <dt class="library__results-description-term">Drug 2: </dt>
+                        <dd class="library__results-description-value" id="drug2Display">a</dd> -->
+                        <dt class="library__results-description-term">Shared Targets: </dt>
+                        <dd class="library__results-description-value" id="target">a</dd>
+                        <dt class="library__results-description-term">Reported Events: </dt>
+                        <dd class="library__results-description-value" id="conditions">a</dd>
+                    </dl>
+                </div>
             </div>
         </section>   
         <!-- <section class="library__notes">
             <h2 class="library__notes-title">Important Notes</h2>
         </section> -->
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
