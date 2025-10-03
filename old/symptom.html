@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Library</title>
+    <link rel="icon" href="./images/icons/pill_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__branding">
+                <img class="header__logo" src="./images/icons/pill_logo.png">
+                <h1 class="header__logo-text">
+                    <span>Drug</span>
+                    <span>Library</span>
+                </h1>
+            </a>
+            <div class="header__search">
+                <input class="header__search-bar" type="text" placeholder="Search a drug">
+                <button class="header__search-button">
+                    <span>></span>
+                </button>
+            </div>
+            <div class="header__misc">
+                <button class="header__sign-in-button">
+                    <span>Sign In</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <nav class="nav">
+        <ul class="nav__menu">
+            <li class="nav__menu-item"><a href="index.html">Drugs</a></li>
+            <li class="nav__menu-item"><a href="target.html">Drug Target Search</a></li>
+            <li class="nav__menu-item"><a href="index.html">Drug Interaction Search</a></li>
+            <li class="nav__menu-item"><a href="symptom.html">Symptom Checker</a></li>
+            <li class="nav__menu-item"><a href="index.html">About</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="library__main">
+            <h2 class="library__main-title">Symptom Checker</h2>
+            <span class="library__main-subtitle">Having symptoms? Check what may be causing what you're feeling.</span>
+            <div class="library__main-content">
+                <form class="library__search">
+                    <div class="library__search-box">
+                        <div class="library__search-div">
+                            <input class="library__search-bar" type="text" id="drug1Input" placeholder="Enter a drug">
+                            <img class="library__search-icon" src="./images/icons/search_icon.png">
+                        </div>
+                    </div>
+                    <div class="library__search-box">
+                        <div class="library__search-div">
+                            <input class="library__search-bar" type="text" id="drug2Input" placeholder="Enter a drug">
+                            <img class="library__search-icon" src="./images/icons/search_icon.png">
+                        </div>
+                    </div>
+                    <button type="submit" class="library__search-button">Check</button>
+                </form>
+                <p class="library__main-disclaimer">
+                    <b>DISCLAIMER</b>: While this is a project that uses real drug data from <b><a href="https://www.guidetopharmacology.org/">IUPHAR Guide to Pharmacology</a></b> and <b><a href="https://nsides.io/">nSIDES' TWOSIDES</a></b> database, this should NOT be used as a sole or legitimate source over any qualified and licensed practitioner or health care provider.
+                </p>
+                <div class="library__results hidden">
+                    <div class="library__results-headline">Caution: Interaction(s) Found</div>
+                    <div class="library__results-subheader">X interactions found between drug1 and drug2.</div>
+                    <dl class="library__results-description">
+                        <!-- <dt class="library__results-description-term">Drug 1: </dt>
+                        <dd class="library__results-description-value" id="drug1Display">a</dd>
+                        <dt class="library__results-description-term">Drug 2: </dt>
+                        <dd class="library__results-description-value" id="drug2Display">a</dd> -->
+                        <dt class="library__results-description-term">Shared Targets: </dt>
+                        <dd class="library__results-description-value" id="target">a</dd>
+                        <dt class="library__results-description-term">Reported Events: </dt>
+                        <dd class="library__results-description-value" id="conditions">a</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>   
+        <!-- <section class="library__notes">
+            <h2 class="library__notes-title">Important Notes</h2>
+        </section> -->
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
