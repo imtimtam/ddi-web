@@ -13,7 +13,7 @@ export function InteractionPage() {
       <title>Drug Interaction Checker</title>
       <Header />
       <Nav />
-      <section className="library__main">
+      <main className="library__main">
         <h2 className="library__main-title">Drug Interaction Checker</h2>
         <span className="library__main-subtitle">
           Check for potential interactions between any drugs.
@@ -22,7 +22,7 @@ export function InteractionPage() {
           <InteractionForm setResults={setResults} />
           <Results results={results} />
         </div>
-      </section>
+      </main>
     </>
   );
 }
