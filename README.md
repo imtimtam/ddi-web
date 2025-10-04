@@ -6,7 +6,7 @@
   <em>View potential interactions and reported adverse events instantly.</em>
 </p>
 
-**Drug Library** is a responsive **React + Vite web application** for exploring drugs, identifying potential drug-drug interactions (DDIs), and reviewing shared receptor targets. The site integrates with a FastAPI backend that processes multi-million row pharmacological and FDA datasets, enabling accurate and scalable results across thousands of drugs and reported adverse events. The API can be found [here](https://github.com/imtimtam/ddi-api).
+**Drug Library** is a responsive **React + Vite web application** for exploring drugs, identifying potential drug-drug interactions (DDIs), and reviewing shared receptor targets. The site integrates with a **FastAPI backend** that processes multi-million row pharmacological and FDA datasets, enabling accurate and scalable results across thousands of drugs and reported adverse events. The **API** can be found [here](https://github.com/imtimtam/ddi-api).
 
 ## Demo Features
 - **Drug Interaction Search**: Enter two drugs to check for potential interactions from a backend API.
