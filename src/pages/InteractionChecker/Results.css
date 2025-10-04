@@ -41,3 +41,10 @@
     text-align: center;
     line-height: 22px;
 }
+
+/* Tablet and Mobile */
+@media(max-width: 768px){
+    .library__results{
+        width: 95%;
+    }
+}

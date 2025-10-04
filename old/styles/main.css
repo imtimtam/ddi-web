@@ -165,8 +165,8 @@
 @media(max-width: 768px){
     .library__main-title{
         font-size: 1.8em;
-        white-space: normal; /* allows wrapping instead of overflow */
-        text-align: center;  /* keeps it centered nicely */
+        white-space: normal;
+        text-align: center;
     }
     .library__results{
         width: 95%;
