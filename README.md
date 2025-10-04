@@ -1,7 +1,7 @@
 # Drug Library (Frontend)
 
 <p align="center">
-  <img src="./images/screenshots/updated_webpage-search.png" alt="DDI Frontend" />
+  <img src="./docs/updated_webpage-search.png" alt="DDI Frontend" />
   <br>
   <em>View potential interactions and reported adverse events instantly.</em>
 </p>
@@ -12,9 +12,9 @@
 - **Drug Interaction Search**: Enter two drugs to check for potential interactions from a backend API.
 
 <p align="center">
-  <img src="./images/screenshots/updated_webpage-safe.png" alt="Safe Interaction Results" />
+  <img src="./docs/updated_webpage-mobile-safe.png" alt="Safe Interaction Results" />
   <br>
-  <em>Clear and reliable results when no adverse events are found.</em>
+  <em>Mobile-friendly and clear and reliable results when no adverse events are found.</em>
 </p>
 
 - **Drug Target Search**: Explore drug targets (planned).
