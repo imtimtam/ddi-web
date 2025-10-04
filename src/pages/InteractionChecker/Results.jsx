@@ -1,11 +1,8 @@
 import "./Results.css";
 
-export function Results({ results, error }) {
-  if (error) {
-    return <div className="library__results red">{error}</div>;
-  }
-
+export function Results({ results }) {
   if (!results) return null;
+  if (results.error) return <div className="library__results"><div className="library__results-headline red">{results.error}</div></div>;
   const interaction = results.interaction;
 
   return (

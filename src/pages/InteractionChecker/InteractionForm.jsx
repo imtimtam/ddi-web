@@ -3,7 +3,7 @@ import { fetchDrugs, fetchInteraction } from "../../utils/api.js";
 import searchIcon from "../../assets/search_icon.png";
 import "./InteractionForm.css";
 
-export function InteractionForm({ setResults, setHeadline }) {
+export function InteractionForm({ setResults }) {
   const API_URL = "http://127.0.0.1:8000";
   const [drug1, setDrug1] = useState("");
   const [drug2, setDrug2] = useState("");
@@ -36,19 +36,16 @@ export function InteractionForm({ setResults, setHeadline }) {
     e.preventDefault();
 
     if (!drug1 || !drug2) {
-      setHeadline("⚠ ERROR: ENTER BOTH DRUGS");
-      setResults(null);
+      setResults({error: "⚠ ERROR: ENTER BOTH DRUGS"});
       return;
     }
 
     try {
       const interactions = await fetchInteraction(drug1, drug2);
       setResults(interactions);
-      setHeadline("");
     } catch (error) {
       console.error(error);
-      setHeadline("⚠ ERROR: ERROR FETCHING INTERACTIONS");
-      setResults(null);
+      setResults({error: "⚠ ERROR: FAIL TO FETCH INTERACTIONS"});
     }
   }
 
@@ -87,6 +84,7 @@ export function InteractionForm({ setResults, setHeadline }) {
                 autoComplete="off"
                 value={drug1}
                 onChange={(e) => handleInput(e, setDrug1, setSuggestion1)}
+                onBlur={() => {setTimeout(() => setSuggestion1([]), 100)}}
               />
               <img className="library__search-icon" src={searchIcon} />
             </div>
@@ -104,6 +102,7 @@ export function InteractionForm({ setResults, setHeadline }) {
                 autoComplete="off"
                 value={drug2}
                 onChange={(e) => handleInput(e, setDrug2, setSuggestion2)}
+                onBlur={() => {setTimeout(() => setSuggestion2([]), 100)}}
               />
               <img className="library__search-icon" src={searchIcon} />
             </div>

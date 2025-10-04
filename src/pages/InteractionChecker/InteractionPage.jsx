@@ -7,7 +7,6 @@ import "./InteractionPage.css";
 
 export function InteractionPage() {
   const [results, setResults] = useState(null);
-  const [headline, setHeadline] = useState("");
 
   return (
     <>
@@ -20,8 +19,8 @@ export function InteractionPage() {
           Check for potential interactions between any drugs.
         </span>
         <div class="library__main-content">
-          <InteractionForm setResults={setResults} setHeadline={setHeadline} />
-          <Results results={results} headline={headline} />
+          <InteractionForm setResults={setResults} />
+          <Results results={results} />
         </div>
       </section>
     </>
