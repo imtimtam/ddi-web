@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router";
-import { InteractionPage } from "./pages/InteractionPage.jsx";
+import { InteractionPage } from "./pages/InteractionChecker/InteractionPage";
 
-import './App.css'
 import './styles/base.css'
 
 function App() {
