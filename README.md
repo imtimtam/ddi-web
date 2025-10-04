@@ -14,7 +14,7 @@
 <p align="center">
   <img src="./docs/updated_webpage-mobile-safe.png" alt="Safe Interaction Results" />
   <br>
-  <em>Mobile-friendly and clear and reliable results when no adverse events are found.</em>
+  <em>Mobile-friendly with clear and reliable results when no adverse events are found.</em>
 </p>
 
 - **Autocomplete Suggestions**: React-powered suggestions help users quickly find drugs from thousands of options.
