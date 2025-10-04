@@ -33,8 +33,9 @@ export function Results({ results, error }) {
             {results.conditions_and_prr ? (
               Object.entries(results.conditions_and_prr).map(
                 ([condition, prr]) => (
-                  <div key={condition}>
-                    {condition} : {prr.toFixed(2)}
+                  <div className="library__results-condition-row" key={condition}>
+                    <span className="library__results-condition-name">{condition}</span>
+                    <span className="library__results-condition-prr">{prr.toFixed(2)}</span>
                   </div>
                 )
               )
