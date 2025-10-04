@@ -36,7 +36,7 @@ export function InteractionForm({ setResults }) {
     e.preventDefault();
 
     if (!drug1 || !drug2) {
-      setResults({error: "⚠ ERROR: ENTER BOTH DRUGS"});
+      setResults({ error: "⚠ ERROR: ENTER BOTH DRUGS" });
       return;
     }
 
@@ -45,7 +45,7 @@ export function InteractionForm({ setResults }) {
       setResults(interactions);
     } catch (error) {
       console.error(error);
-      setResults({error: "⚠ ERROR: FAIL TO FETCH INTERACTIONS"});
+      setResults({ error: "⚠ ERROR: FAIL TO FETCH INTERACTIONS" });
     }
   }
 
@@ -84,7 +84,9 @@ export function InteractionForm({ setResults }) {
                 autoComplete="off"
                 value={drug1}
                 onChange={(e) => handleInput(e, setDrug1, setSuggestion1)}
-                onBlur={() => {setTimeout(() => setSuggestion1([]), 100)}}
+                onBlur={() => {
+                  setTimeout(() => setSuggestion1([]), 100);
+                }}
               />
               <img className="library__search-icon" src={searchIcon} />
             </div>
@@ -102,7 +104,9 @@ export function InteractionForm({ setResults }) {
                 autoComplete="off"
                 value={drug2}
                 onChange={(e) => handleInput(e, setDrug2, setSuggestion2)}
-                onBlur={() => {setTimeout(() => setSuggestion2([]), 100)}}
+                onBlur={() => {
+                  setTimeout(() => setSuggestion2([]), 100);
+                }}
               />
               <img className="library__search-icon" src={searchIcon} />
             </div>

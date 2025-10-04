@@ -2,9 +2,16 @@ import "./Results.css";
 
 export function Results({ results }) {
   if (!results) return null;
-  if (results.error) return <div className="library__results"><div className="library__results-headline red">{results.error}</div></div>;
+  if (results.error)
+    return (
+      <div className="library__results">
+        <div className="library__results-headline red">{results.error}</div>
+      </div>
+    );
   const interaction = results.interaction;
-  const count = results.conditions_and_prr ? Object.keys(results.conditions_and_prr).length : 0;
+  const count = results.conditions_and_prr
+    ? Object.keys(results.conditions_and_prr).length
+    : 0;
 
   return (
     <div className="library__results">
@@ -31,14 +38,23 @@ export function Results({ results }) {
             {results.conditions_and_prr ? (
               Object.entries(results.conditions_and_prr).map(
                 ([condition, prr]) => (
-                  <div className="library__results-condition-row" key={condition}>
-                    <span className="library__results-condition-name">{condition}</span>
-                    <span className="library__results-condition-prr">{prr.toFixed(2)}</span>
+                  <div
+                    className="library__results-condition-row"
+                    key={condition}
+                  >
+                    <span className="library__results-condition-name">
+                      {condition}
+                    </span>
+                    <span className="library__results-condition-prr">
+                      {prr.toFixed(2)}
+                    </span>
                   </div>
                 )
               )
             ) : (
-              <div className="library__results-condition-row">No significant reports</div>
+              <div className="library__results-condition-row">
+                No significant reports
+              </div>
             )}
           </div>
         </dd>
@@ -52,7 +68,9 @@ export function Results({ results }) {
             when the drugs are <b>taken together</b>.
           </div>
           <div className="library__results-description-value" id="target">
-            <div className="library__results-condition-row">{results.targets ? results.targets.join(", ") : "Not recorded"}</div>
+            <div className="library__results-condition-row">
+              {results.targets ? results.targets.join(", ") : "Not recorded"}
+            </div>
           </div>
         </dd>
       </dl>
