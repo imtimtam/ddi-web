@@ -1,0 +1,43 @@
+.library__results{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 20px;
+}
+.library__results-headline{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.library__results-subheader{
+    text-align: center;
+    font-weight: bold;
+    color: var(--subtext-color);
+    font-size: 14px;
+}
+.library__results-description{
+    display: flex;
+    flex-direction: column;
+}
+.library__results-description-box{
+    margin: 0;
+}
+.library__results-description-term{
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+.library__results-description-context{
+    color: var(--text-color);
+    font-weight: lighter;
+    font-size: 14px;
+}
+.library__results-description-value{
+    color: var(--text-color);
+    font-size: 1.2em;
+    margin-left: 20px;
+    padding: 20px;
+    text-align: center;
+    line-height: 22px;
+}
