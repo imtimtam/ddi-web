@@ -4,6 +4,7 @@ export function Results({ results }) {
   if (!results) return null;
   if (results.error) return <div className="library__results"><div className="library__results-headline red">{results.error}</div></div>;
   const interaction = results.interaction;
+  const count = Object.keys(results.conditions_and_prr).length;
 
   return (
     <div className="library__results">
@@ -11,7 +12,7 @@ export function Results({ results }) {
         className={`library__results-headline ${interaction ? "red" : "green"}`}
       >
         {interaction
-          ? "⚠ CAUTION: INTERACTIONS FOUND"
+          ? `⚠ CAUTION: ${count} INTERACTIONS FOUND`
           : "✔ SAFE: NO INTERACTIONS FOUND"}
       </div>
       <div className="library__results-subheader"></div>
