@@ -13,12 +13,12 @@ export function InteractionPage() {
       <title>Drug Interaction Checker</title>
       <Header />
       <Nav />
-      <section class="library__main">
-        <h2 class="library__main-title">Drug Interaction Checker</h2>
-        <span class="library__main-subtitle">
+      <section className="library__main">
+        <h2 className="library__main-title">Drug Interaction Checker</h2>
+        <span className="library__main-subtitle">
           Check for potential interactions between any drugs.
         </span>
-        <div class="library__main-content">
+        <div className="library__main-content">
           <InteractionForm setResults={setResults} />
           <Results results={results} />
         </div>

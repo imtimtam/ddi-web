@@ -4,7 +4,7 @@ export function Results({ results }) {
   if (!results) return null;
   if (results.error) return <div className="library__results"><div className="library__results-headline red">{results.error}</div></div>;
   const interaction = results.interaction;
-  const count = Object.keys(results.conditions_and_prr).length;
+  const count = results.conditions_and_prr ? Object.keys(results.conditions_and_prr).length : 0;
 
   return (
     <div className="library__results">
@@ -38,7 +38,7 @@ export function Results({ results }) {
                 )
               )
             ) : (
-              <div>No significant reports</div>
+              <div className="library__results-condition-row">No significant reports</div>
             )}
           </div>
         </dd>
@@ -52,7 +52,7 @@ export function Results({ results }) {
             when the drugs are <b>taken together</b>.
           </div>
           <div className="library__results-description-value" id="target">
-            {results.targets ? results.targets.join(", ") : "Not recorded"}
+            <div className="library__results-condition-row">{results.targets ? results.targets.join(", ") : "Not recorded"}</div>
           </div>
         </dd>
       </dl>
