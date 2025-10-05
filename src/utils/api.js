@@ -4,7 +4,7 @@ export const API_URL = "http://127.0.0.1:8000";
 
 export async function fetchInteraction(drug1, drug2) {
   try {
-    let url = `${API_URL}/full_interactions/`;
+    const url = `${API_URL}/full_interactions/`;
     const response = await axios.get(url, { params: { drug1, drug2 } });
     return response.data;
   } catch (error) {
@@ -14,7 +14,7 @@ export async function fetchInteraction(drug1, drug2) {
 
 export async function fetchDrugs() {
   try {
-    let url = `${API_URL}/drugs/`;
+    const url = `${API_URL}/drugs/`;
     const response = await axios.get(url);
     return response.data.drugs;
   } catch (error) {

@@ -4,7 +4,6 @@ import searchIcon from "../../assets/search_icon.png";
 import "./InteractionForm.css";
 
 export function InteractionForm({ setResults }) {
-  const API_URL = "http://127.0.0.1:8000";
   const [drug1, setDrug1] = useState("");
   const [drug2, setDrug2] = useState("");
   const [drugList, setDrugList] = useState([]);
