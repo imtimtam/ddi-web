@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Header } from "../../components/Header.jsx";
-import { Nav } from "../../components/Nav.jsx";
 import { InteractionForm } from "./InteractionForm.jsx";
 import { Results } from "./Results.jsx";
 import "./InteractionPage.css";
@@ -11,8 +9,6 @@ export function InteractionPage() {
   return (
     <>
       <title>Drug Interaction Checker</title>
-      <Header />
-      <Nav />
       <main className="library__main">
         <h2 className="library__main-title">Drug Interaction Checker</h2>
         <span className="library__main-subtitle">
