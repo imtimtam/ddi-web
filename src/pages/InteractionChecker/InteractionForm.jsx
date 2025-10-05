@@ -39,6 +39,14 @@ export function InteractionForm({ setResults }) {
       return;
     }
 
+    const validCheck1 = drugList.includes(drug1);
+    const validCheck2 = drugList.includes(drug2);
+
+    if(!validCheck1 || !validCheck2){
+      setResults({ error: "⚠ ERROR: ENTER TWO VALID DRUGS" });
+      return;
+    }
+
     try {
       const interactions = await fetchInteraction(drug1, drug2);
       setResults(interactions);
