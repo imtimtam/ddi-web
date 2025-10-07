@@ -1,0 +1,13 @@
+.library__results-condition-row{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--gray-300);
+    line-height: 24px;
+}
+.library__results-condition-name{
+    white-space: nowrap;
+}
+.library__results-condition-note{
+    color: var(--primary-color);
+}

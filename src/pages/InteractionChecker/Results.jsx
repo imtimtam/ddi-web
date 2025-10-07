@@ -1,3 +1,4 @@
+import { ResultsResponse } from "../../components/ResultsResponse";
 import "./Results.css";
 
 export function Results({ results }) {
@@ -30,31 +31,24 @@ export function Results({ results }) {
         <dd className="library__results-description-box">
           <div className="library__results-description-context">
             Events listed here had a{" "}
-            <b>proportional reporting ratio (PRR) over 2.0</b>, indicating a
-            higher-than-expected reporting rate; this signals a{" "}
+            <b>proportional reporting ratio (PRR) over 2.0</b>, indicating the
+            event was reported about <b>atleast twice</b>  as often for these
+            drugs compared to others in the database; this signals a{" "}
             <b>potential risk, not confirmed causation</b>.
           </div>
           <div className="library__results-description-value" id="conditions">
             {results.conditions_and_prr ? (
               Object.entries(results.conditions_and_prr).map(
                 ([condition, prr]) => (
-                  <div
-                    className="library__results-condition-row"
+                  <ResultsResponse
                     key={condition}
-                  >
-                    <span className="library__results-condition-name">
-                      {condition}
-                    </span>
-                    <span className="library__results-condition-prr">
-                      {prr.toFixed(2)}
-                    </span>
-                  </div>
+                    result={condition}
+                    note={prr}
+                  />
                 )
               )
             ) : (
-              <div className="library__results-condition-row">
-                No significant reports
-              </div>
+              <ResultsResponse result={"No significant reports"} />
             )}
           </div>
         </dd>
@@ -68,9 +62,13 @@ export function Results({ results }) {
             when the drugs are <b>taken together</b>.
           </div>
           <div className="library__results-description-value" id="target">
-            <div className="library__results-condition-row">
-              {results.targets ? results.targets.join(", ") : "Not recorded"}
-            </div>
+            {results.targets ? (
+              results.targets.map((target) => (
+                <ResultsResponse key={target} result={target} />
+              ))
+            ) : (
+              <ResultsResponse result={"Not recorded"} />
+            )}
           </div>
         </dd>
       </dl>
