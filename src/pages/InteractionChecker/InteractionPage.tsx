@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { InteractionForm } from "./InteractionForm.jsx";
-import { Results } from "./Results.jsx";
+import { InteractionForm } from "./InteractionForm";
+import { Results } from "./Results";
 import "./InteractionPage.css";
 
 export function InteractionPage() {
