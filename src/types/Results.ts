@@ -8,4 +8,4 @@ export interface ErrorResults {
     error: string;
 }
 
-export type Results = APIResults | ErrorResults | null;
+export type ResultsType = APIResults | ErrorResults;
