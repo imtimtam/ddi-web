@@ -1,9 +1,14 @@
 import { ResultsResponse } from "../../components/ResultsResponse";
+import type { ResultsType } from "../../types/Results";
 import "./Results.css";
 
-export function Results({ results }) {
+interface ResultsProp {
+  results: ResultsType | null;
+}
+
+export function Results({ results }: ResultsProp) {
   if (!results) return null;
-  if (results.error)
+  if ("error" in results)
     return (
       <div className="library__results">
         <div className="library__results-headline red">{results.error}</div>
@@ -32,7 +37,7 @@ export function Results({ results }) {
           <div className="library__results-description-context">
             Events listed here had a{" "}
             <b>proportional reporting ratio (PRR) over 2.0</b>, indicating the
-            event was reported about <b>atleast twice</b>  as often for these
+            event was reported about <b>atleast twice</b> as often for these
             drugs compared to others in the database; this signals a{" "}
             <b>potential risk, not confirmed causation</b>.
           </div>

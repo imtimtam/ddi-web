@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InteractionForm } from "./InteractionForm";
 import { Results } from "./Results";
-import { ResultsType } from "../../types/Results";
+import { type ResultsType } from "../../types/Results";
 import "./InteractionPage.css";
 
 export function InteractionPage() {
