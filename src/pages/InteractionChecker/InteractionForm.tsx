@@ -1,14 +1,27 @@
-import { useState, useEffect } from "react";
+import {
+  useState,
+  useEffect,
+  type Dispatch,
+  type SetStateAction,
+  type ChangeEvent,
+  type FormEventHandler,
+  type FormEvent,
+} from "react";
 import { fetchDrugs, fetchInteraction } from "../../utils/api.js";
+import { type ResultsType, Errors } from "../../types/Results.js";
 import searchIcon from "../../assets/search_icon.png";
 import "./InteractionForm.css";
 
-export function InteractionForm({ setResults }) {
+interface InteractionFormProps {
+  setResults: Dispatch<SetStateAction<ResultsType | null>>;
+}
+
+export function InteractionForm({ setResults }: InteractionFormProps) {
   const [drug1, setDrug1] = useState("");
   const [drug2, setDrug2] = useState("");
-  const [drugList, setDrugList] = useState([]);
-  const [suggestion1, setSuggestion1] = useState([]);
-  const [suggestion2, setSuggestion2] = useState([]);
+  const [drugList, setDrugList] = useState<string[]>([]);
+  const [suggestion1, setSuggestion1] = useState<string[]>([]);
+  const [suggestion2, setSuggestion2] = useState<string[]>([]);
 
   useEffect(() => {
     async function getDrugs() {
@@ -18,7 +31,11 @@ export function InteractionForm({ setResults }) {
     getDrugs();
   }, []);
 
-  function handleInput(e, setDrug, setSuggestions) {
+  function handleInput(
+    e: ChangeEvent<HTMLInputElement>,
+    setDrug: Dispatch<SetStateAction<string>>,
+    setSuggestions: Dispatch<SetStateAction<string[]>>
+  ) {
     const input = e.target.value.trim().toLowerCase();
     setDrug(input);
 
@@ -31,19 +48,19 @@ export function InteractionForm({ setResults }) {
     setSuggestions(matches);
   }
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!drug1 || !drug2) {
-      setResults({ error: "⚠ ERROR: ENTER BOTH DRUGS" });
+      setResults({ error: Errors.MISSING_DRUGS });
       return;
     }
 
     const validCheck1 = drugList.includes(drug1);
     const validCheck2 = drugList.includes(drug2);
 
-    if(!validCheck1 || !validCheck2){
-      setResults({ error: "⚠ ERROR: ENTER TWO VALID DRUGS" });
+    if (!validCheck1 || !validCheck2) {
+      setResults({ error: Errors.INVALID_DRUGS });
       return;
     }
 
@@ -52,11 +69,14 @@ export function InteractionForm({ setResults }) {
       setResults(interactions);
     } catch (error) {
       console.error(error);
-      setResults({ error: "⚠ ERROR: FAIL TO FETCH INTERACTIONS" });
+      setResults({ error: Errors.FETCH_INTERACTIONS });
     }
   }
-
-  function createSuggestions(suggestions, setSuggestions, setDrug) {
+  function createSuggestions(
+    suggestions: string[],
+    setSuggestions: Dispatch<SetStateAction<string[]>>,
+    setDrug: Dispatch<SetStateAction<string>>
+  ) {
     if (!suggestions.length) return null;
 
     return (
@@ -95,7 +115,11 @@ export function InteractionForm({ setResults }) {
                   setTimeout(() => setSuggestion1([]), 100);
                 }}
               />
-              <img className="library__search-icon" src={searchIcon} />
+              <img
+                className="library__search-icon"
+                src={searchIcon}
+                alt="search icon"
+              />
             </div>
             {createSuggestions(suggestion1, setSuggestion1, setDrug1)}
           </div>
@@ -115,7 +139,11 @@ export function InteractionForm({ setResults }) {
                   setTimeout(() => setSuggestion2([]), 100);
                 }}
               />
-              <img className="library__search-icon" src={searchIcon} />
+              <img
+                className="library__search-icon"
+                src={searchIcon}
+                alt="search icon"
+              />
             </div>
             {createSuggestions(suggestion2, setSuggestion2, setDrug2)}
           </div>

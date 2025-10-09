@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { InteractionForm } from "./InteractionForm.jsx";
-import { Results } from "./Results.jsx";
+import { InteractionForm } from "./InteractionForm";
+import { Results } from "./Results";
+import { type ResultsType } from "../../types/Results";
 import "./InteractionPage.css";
 
 export function InteractionPage() {
-  const [results, setResults] = useState(null);
+  const [results, setResults] = useState<ResultsType | null>(null);
 
   return (
     <>
