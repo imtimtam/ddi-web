@@ -4,7 +4,6 @@ import {
   type Dispatch,
   type SetStateAction,
   type ChangeEvent,
-  type FormEventHandler,
   type FormEvent,
 } from "react";
 import { fetchDrugs, fetchInteraction } from "../../utils/api.js";
